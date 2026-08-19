@@ -1,49 +1,69 @@
-# SignalGuard AI — Corporate Distress & Early-Warning Intelligence
+# SignalGuard AI
 
-A portfolio-grade decision-support application combining structured SEC financial data,
-transparent risk analytics, filing-text retrieval, optional LLM analysis, and scenario stress testing.
+### Corporate Distress & Early-Warning Intelligence
 
-**Business question:** Is a company showing signs of financial deterioration, which signals are
-driving the warning, what filing evidence is relevant, and how sensitive is the profile to stress?
+SignalGuard AI is an AI-powered financial analytics application that uses public SEC data to identify early signs of corporate financial deterioration and explain the factors driving the risk.
 
-## Product flow
-Ticker → SEC Company Facts → Financial Features → Early-Warning Engine → SEC Filing →
-Evidence Retrieval → AI Analyst Brief → Scenario Stress Lab
+### 🚀 [Try the Live Application](https://signalguard-ai.streamlit.app)
 
-## Features
-- Live U.S. public-company lookup
-- SEC XBRL financial facts
-- Liquidity, leverage, debt-service, profitability and cash-flow features
-- Transparent 0–100 screening score
-- Risk-driver contribution view
-- Historical trend charts
-- Latest 10-K/10-Q retrieval
-- Local TF-IDF evidence retrieval
-- Optional OpenAI memo with no-key fallback
-- Stress-test sliders
-- Unit tests
-- Streamlit deployment-ready
+---
 
-## Run locally
-```powershell
-python -m venv .venv
-.venv\Scripts\Activate.ps1
-pip install -r requirements.txt
-$env:SEC_USER_AGENT="SignalGuard-AI-Portfolio your-real-email@example.com"
-streamlit run app.py
+## What It Does
+
+Enter a U.S. public-company ticker such as `AAPL`, `MSFT`, `F`, or `UAL`.
+
+SignalGuard automatically:
+
+- Retrieves financial data from SEC EDGAR
+- Analyzes liquidity, leverage, profitability, cash flow, and financial trends
+- Generates an explainable **Early-Warning Score**
+- Retrieves relevant evidence from 10-K / 10-Q filings
+- Uses **Google Gemini** to generate an evidence-grounded analyst brief
+- Lets users stress-test the company under adverse financial scenarios
+
+---
+
+## How It Works
+
+```text
+Company Ticker
+      ↓
+SEC Financial Data
+      ↓
+Risk + Trend Analysis
+      ↓
+SEC Filing Evidence
+      ↓
+Gemini AI Analyst
+      ↓
+Scenario Stress Testing
 ```
 
-Optional AI:
-```powershell
-$env:OPENAI_API_KEY="your-key"
-```
+---
 
-Tests:
-```powershell
-pytest
-```
+## Tech Stack
 
-## Important limitation
-The current 0–100 result is a transparent early-warning screening score. It is not a bankruptcy
-probability or validated credit rating. A true supervised ML layer requires point-in-time historical
-features, defensible distress labels, time-aware validation, calibration and model governance.
+**Python · Streamlit · Pandas · Plotly · SEC EDGAR/XBRL · TF-IDF · Google Gemini API · pytest**
+
+---
+
+## Why I Built It
+
+Financial warning signs are often scattered across financial statements, historical trends, and lengthy regulatory filings.
+
+SignalGuard brings these signals together into one explainable workflow to answer:
+
+**What is changing? What is driving the risk? What evidence supports it? What could happen under stress?**
+
+---
+
+## Important Note
+
+SignalGuard is an educational early-warning screening tool developed as a portfolio project. Its score is **not** a bankruptcy probability, credit rating, investment recommendation, or lending decision.
+
+---
+
+## Links
+
+🚀 **[Live Demo](https://signalguard-ai.streamlit.app)**  
+💻 **[Source Code](https://github.com/SHRUTI0907/Signal-Guard-AI)**
