@@ -18,10 +18,33 @@ def inject_css(st):
     [data-testid="stSidebar"] *{color:#F8F9FA}
     [data-testid="stSidebar"] input,[data-testid="stSidebar"] [data-baseweb="select"] *{color:#111827!important}
     [data-testid="stSidebar"] hr{border-color:rgba(255,255,255,.12)}
-    [data-testid="stMetric"]{border:1px solid var(--line);padding:1.05rem 1.15rem;border-radius:18px;background:rgba(255,255,255,.82);box-shadow:0 12px 30px rgba(16,24,39,.055);backdrop-filter:blur(10px);transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
-    [data-testid="stMetric"]:hover{transform:translateY(-3px);box-shadow:0 18px 38px rgba(16,24,39,.09);border-color:rgba(109,40,217,.28)}
-    [data-testid="stMetricValue"]{font-size:2rem;line-height:1.1;font-weight:650;letter-spacing:-.035em}
-    [data-testid="stMetricLabel"]{font-size:.78rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+   [data-testid="stMetric"] {
+    border: 1px solid var(--line);
+    padding: 1.05rem 1.15rem;
+    border-radius: 18px;
+    background: rgba(255,255,255,.82);
+    box-shadow: 0 12px 30px rgba(16,24,39,.055);
+    backdrop-filter: blur(10px);
+    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    overflow: visible !important;
+}
+
+[data-testid="stMetric"]:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 38px rgba(16,24,39,.09);
+    border-color: rgba(109,40,217,.28);
+}
+
+[data-testid="stMetricValue"] {
+    font-size: 1.8rem !important;
+    line-height: 1.1;
+    font-weight: 650;
+    letter-spacing: -.035em;
+    white-space: nowrap !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+} 
+[data-testid="stMetricLabel"]{font-size:.78rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
     .stButton>button,[data-testid="stLinkButton"] a{border-radius:12px!important;font-weight:700!important;transition:transform .18s ease,filter .18s ease,box-shadow .18s ease!important}
     .stButton>button[kind="primary"]{background:var(--accent)!important;border-color:var(--accent)!important;color:white!important;box-shadow:0 10px 24px rgba(109,40,217,.22)}
     .stButton>button:hover,[data-testid="stLinkButton"] a:hover{transform:scale(1.02);filter:brightness(1.04)}
